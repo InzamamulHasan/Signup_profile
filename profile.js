@@ -48,9 +48,7 @@ signup.addEventListener("click",()=>{
 
 let profile=document.querySelector(".profile");
 profile.addEventListener("click",()=>{
-     let obj=JSON.parse(localStorage.getItem("CurrUser"))||{};
-
-    
+    let obj=JSON.parse(localStorage.getItem("CurrUser"))||{}; 
     if(obj.token==undefined){
         window.location.href="./index.html";
     }else{
