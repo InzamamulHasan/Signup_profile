@@ -1,0 +1,44 @@
+body{
+    margin: 0px;
+    font-family:"Inter", sans-serif;
+    background-color: black;
+    color: white;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:aliceblue;
+}
+#navbar{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    background-color: black;
+    color: aliceblue;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+    border-bottom: 2px solid white;
+}
+ul{
+    display: flex;
+    gap: 60px;
+}
+.left_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profiles{
+    padding: 40px;
+}
+p{
+    font-size: 34px;
+}
+.logout{
+    width: 100px;
+    height: 30px;
+}
