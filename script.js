@@ -1,4 +1,5 @@
-let signUpBtn=document.querySelector(".btn");
+let signUpBtn=document.querySelector(".form");
+
 
 let names=document.getElementById("name");
 let email=document.getElementById("email");
@@ -8,10 +9,17 @@ let confpass=document.getElementById("confpassword");
 let err=document.querySelector(".err");
 let success=document.querySelector(".succes");
 
+let obj1=JSON.parse(localStorage.getItem("CurrUser"))||{};
+if(obj1.token!=undefined){
+    alert("Already logged in");
+    window.location.href="./profile.html";
+
+}
+
 let arr=JSON.parse(localStorage.getItem("Datas"))||[];
 
-signUpBtn.addEventListener("click",()=>{
-
+signUpBtn.addEventListener("submit",(e)=>{
+    e.preventDefault();
     if(names.value==""||email.value==""||password.value==""||confpass.value==""){
         err.innerText="Error : All the fields are mandatory";
         err.style.color="red";
@@ -46,7 +54,7 @@ signUpBtn.addEventListener("click",()=>{
     }
     arr.push(obj);
     localStorage.setItem("CurrUser",JSON.stringify(obj))
-    localStorage.setItem("Datas",JSON.stringify(arr));
+   // localStorage.setItem("Datas",JSON.stringify(arr));
     window.location.href="./profile.html";
 })
 
